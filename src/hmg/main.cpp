@@ -1,10 +1,52 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <ctime>
-#include <vector>
+#include <libhmg/counting_lines.h>
+#include <libhmg/drawing_man.h>
+#include <libhmg/input_validation.h>
+#include <libhmg/menu.h>
+#include <libhmg/victory_check.h>
+#include <libhmg/word_check.h>
+#include <libhmg/word_choice.h>
+#include <libhmg/word_fill.h>
+
 #include <Windows.h>
+#include <ctime>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
+
+struct list {
+    list()
+    {
+        Name = "NULL";
+        Number = 0;
+        Weight = 0;
+    }
+    list(string name, int number, int weight)
+    {
+        this->Name = name;
+        this->Number = number;
+        this->Weight = weight;
+    }
+    string Name;
+    int Number;
+    int Weight;
+};
+
+struct game {
+    game()
+    {
+        Word = "NULL";
+        Question = "NULL";
+    }
+    game(string word, string question)
+    {
+        this->Word = word;
+        this->Question = question;
+    }
+    string Word;
+    string Question;
+};
 
 ostream& operator<<(ostream& os, const game& point)
 {
