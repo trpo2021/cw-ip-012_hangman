@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <string>
+#include <libhmg/struct_game.h>
 
 using namespace std;
 

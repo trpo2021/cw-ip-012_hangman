@@ -1,4 +1,5 @@
 #include <libhmg/word_choice.h>
+#include <libhmg/struct_game.h>
 
 #include <fstream>
 #include <string>
@@ -7,7 +8,7 @@
 
 using namespace std;
 
-void word_choice(fstream& fin, string patch, const int lines, game& word)
+void word_choice(fstream& fin, string patch, int lines, game& word)
 {
     int rline = 1 + rand() % lines;
     int k = 0;

@@ -6,6 +6,7 @@
 #include <libhmg/word_check.h>
 #include <libhmg/word_choice.h>
 #include <libhmg/word_fill.h>
+#include <libhmg/struct_game.h>
 
 #include <Windows.h>
 #include <ctime>
@@ -33,20 +34,6 @@ struct list {
     int Weight;
 };
 
-struct game {
-    game()
-    {
-        Word = "NULL";
-        Question = "NULL";
-    }
-    game(string word, string question)
-    {
-        this->Word = word;
-        this->Question = question;
-    }
-    string Word;
-    string Question;
-};
 
 ostream& operator<<(ostream& os, const game& point)
 {
