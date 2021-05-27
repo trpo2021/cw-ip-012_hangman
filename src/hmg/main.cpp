@@ -1,3 +1,23 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <ctime>
+#include <vector>
+#include <Windows.h>
+using namespace std;
+
+ostream& operator<<(ostream& os, const game& point)
+{
+    os << point.Word << "\t" << point.Question;
+    return os;
+}
+
+istream& operator>>(istream& is, game& point)
+{
+    is >> point.Word >> point.Question;
+    return is;
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
