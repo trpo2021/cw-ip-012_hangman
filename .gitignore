@@ -1,0 +1,6 @@
+*.a
+*.d
+*.o
+.vs
+*.exe
+bin/shah
