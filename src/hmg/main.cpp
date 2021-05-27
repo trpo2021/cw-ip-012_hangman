@@ -64,7 +64,6 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     srand(time(0));
-    int choice;
     int lines = 0;
     int life = 6;
     string patch;
