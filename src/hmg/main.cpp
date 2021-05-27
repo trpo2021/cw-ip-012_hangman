@@ -35,17 +35,17 @@ struct list {
 };
 
 
-ostream& operator<<(ostream& os, const game& point)
-{
-    os << point.Word << "\t" << point.Question;
-    return os;
-}
-
-istream& operator>>(istream& is, game& point)
-{
-    is >> point.Word >> point.Question;
-    return is;
-}
+//ostream& operator<<(ostream& os, const game& point)
+//{
+//    os << point.Word << "\t" << point.Question;
+//    return os;
+//}
+//
+//istream& operator>>(istream& is, game& point)
+//{
+//    is >> point.Word >> point.Question;
+//    return is;
+//}
 
 int main()
 {

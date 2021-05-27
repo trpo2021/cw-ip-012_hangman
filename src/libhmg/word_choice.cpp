@@ -1,6 +1,10 @@
 #include <libhmg/word_choice.h>
 #include <libhmg/struct_game.h>
 
+#include <libhmg/istream_operator.h>
+#include <libhmg/ostream_operator.h>
+#include <libhmg/struct_game.h>
+
 #include <fstream>
 #include <string>
 #include <iostream>

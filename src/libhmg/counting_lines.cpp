@@ -1,4 +1,7 @@
 #include <libhmg/counting_lines.h>
+#include <libhmg/struct_game.h>
+#include <libhmg/istream_operator.h>
+#include <libhmg/ostream_operator.h>
 
 #include <fstream>
 #include <string>
