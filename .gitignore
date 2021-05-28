@@ -2,5 +2,6 @@
 *.d
 *.o
 .vs
+.vscode
 *.exe
 bin/shah

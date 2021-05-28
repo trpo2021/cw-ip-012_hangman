@@ -7,6 +7,7 @@
 #include <libhmg/word_choice.h>
 #include <libhmg/word_fill.h>
 #include <libhmg/struct_game.h>
+#include <libhmg/struct_list.h>
 
 #include <Windows.h>
 #include <ctime>
@@ -15,37 +16,6 @@
 #include <string>
 #include <vector>
 using namespace std;
-
-struct list {
-    list()
-    {
-        Name = "NULL";
-        Number = 0;
-        Weight = 0;
-    }
-    list(string name, int number, int weight)
-    {
-        this->Name = name;
-        this->Number = number;
-        this->Weight = weight;
-    }
-    string Name;
-    int Number;
-    int Weight;
-};
-
-
-//ostream& operator<<(ostream& os, const game& point)
-//{
-//    os << point.Word << "\t" << point.Question;
-//    return os;
-//}
-//
-//istream& operator>>(istream& is, game& point)
-//{
-//    is >> point.Word >> point.Question;
-//    return is;
-//}
 
 int main()
 {
