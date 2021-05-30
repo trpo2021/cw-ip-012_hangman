@@ -4,4 +4,4 @@
 
 using namespace std;
 
-int menu(string& patch);
+int menu(string& patch, int& difficulty_s);
