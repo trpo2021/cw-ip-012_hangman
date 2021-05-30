@@ -8,6 +8,9 @@
 #include <libhmg/word_fill.h>
 #include <libhmg/struct_game.h>
 #include <libhmg/struct_list.h>
+#include <libhmg/class_timer.h>
+#include <libhmg/name_input.h>
+#include <libhmg/records.h>
 
 #include <Windows.h>
 #include <ctime>
@@ -23,25 +26,41 @@ int main()
     srand(time(0));
     int lines = 0;
     int life = 6;
+    int time_end = 90;
+    int time_s = 0;
+    int difficulty_s;
+    Timer timer;
     string patch;
+    string patch_r = "highscore_table.txt";
     game word;
+    list record;
+    string name;
     string them;
     string answer;
     char letter;
     fstream fs;
     vector<char> found;
-
+    vector<char> entered_letters;
+    
     do {
         system("CLS");
-    } while (menu(patch) != 0);
+        cout << "Введите никнейм (12 символов, без пробелов): ";
+        cin >> name;
+    } while (name_input(name) != 0);
+  
+    do {
+        system("CLS");
+    } while (menu(patch, difficulty_s) != 0);
 
     counting_lines(fs, patch, lines);
     word_choice(fs, patch, lines, word);
     them = word.Question;
     answer = word.Word;
+    timer.start();
     while (life > 0 && victory_check(answer, found) != 123) {
         do {
             system("CLS");
+            cout << "Время:" << int(time_end-timer.elapsedSeconds()) << endl;
             cout << "Тема: " << them << endl;
             cout << answer << endl;
             drawing_man(life);
@@ -49,15 +68,29 @@ int main()
             word_fill(answer, found);
             cout << endl;
             cout << victory_check(answer, found);
+            if (time_end - timer.elapsedSeconds() <= 0)
+                life = 0;
             cout << endl << "Введите одну букву: ";
             SetConsoleCP(1251);
-            cin >> letter;
+            if (life>0) {
+                cin >> letter;
+            }
             SetConsoleCP(866);
-        } while (input_validation(letter) != 0);
-        if (word_check(answer, letter, found) == 22)
+        } while (input_validation(letter) != 0 && life > 0);
+        if (word_check(answer, letter, found, entered_letters) == 22 )
             life--;
     }
-    system("CLS");
+    SetConsoleCP(866);
+    time_s = time_end - timer.elapsedSeconds();
+    timer.stop();
+    if (time_s > 0 && life > 0 && victory_check(answer, found) == 123) {
+        cout << "ОТКРЫТО!!!!!!!!!!!!!!" << endl;
+        record.Name = name;
+        record.Score = time_s * difficulty_s;
+        records(fs, patch_r, record);
+    }
+    //system("CLS");
     drawing_man(life);
     cout << "Ответ: " << answer << endl;
+    system("pause");
 }

@@ -2,8 +2,8 @@
 
 using namespace std;
 
- istream& operator>>(istream& is, list& point)
+inline istream& operator>>(istream& is, list& point)
 {
-	is >> point.Name >> point.Number >> point.Weight;
+	is >> point.Name >>  point.Score;
 	return is;
 }

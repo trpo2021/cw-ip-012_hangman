@@ -9,16 +9,16 @@ struct list {
     list()
     {
         Name = "NULL";
-        Number = 0;
-        Weight = 0;
+        Score = 0;
     }
-    list(string name, int number, int weight)
+    list(string name, int score)
     {
         this->Name = name;
-        this->Number = number;
-        this->Weight = weight;
+        this->Score = score;
     }
     string Name;
-    int Number;
-    int Weight;
+    int Score;
+
+    //friend inline istream& operator>>(istream& is, list& point);
+    //friend inline ostream& operator<<(ostream& os, const list& point);
 };

@@ -2,8 +2,8 @@
 
 using namespace std;
 
-ostream& operator<<(ostream& os, const list& point)
+inline ostream& operator<<(ostream& os, const list& point)
 {
-    os << point.Name << "\t" << point.Number << "\t" << point.Weight;
+    os << point.Name << "\t" << point.Score;
     return os;
 }
