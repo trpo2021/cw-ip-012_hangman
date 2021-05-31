@@ -19,14 +19,5 @@ int input_validation(char letter)
         || letter == 'ÿ') {
         return 0;
     }
-
-    // SetConsoleCP(1251);
-    // for (int i = 'à'; i < 'ß'; i++)
-    //{
-    //	if (letter == i)
-    //		return 0;
-    //}
-
-    // SetConsoleCP(866);
     return 11;
 }

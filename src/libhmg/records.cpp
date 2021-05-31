@@ -44,7 +44,6 @@ int records(fstream& fs, string patch, list& record_now)
                 fs >> record;
                 lines.push_back(record);
             }
-            cout << "Start Sort." << endl;
             sort(lines.begin(),
                  lines.end(),
                  [](const list& p1, const list& p2) {

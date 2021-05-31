@@ -18,7 +18,4 @@ struct list {
     }
     string Name;
     int Score;
-
-    //friend inline istream& operator>>(istream& is, list& point);
-    //friend inline ostream& operator<<(ostream& os, const list& point);
 };
