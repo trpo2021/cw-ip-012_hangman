@@ -4,3 +4,4 @@
 .vs
 .vscode
 *.exe
+bin/highscore_table.txt
