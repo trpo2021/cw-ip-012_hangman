@@ -58,10 +58,8 @@ int main()
             cin >> name;
             SetConsoleCP(866);
         } while (name_input(name) != 0);
-
-        do {
-            system("CLS");
-        } while (menu(patch, difficulty_s) != 0);
+        
+        menu(patch, difficulty_s, fs, patch_r);
 
         counting_lines(fs, patch, lines);
         word_choice(fs, patch, lines, word);
@@ -73,7 +71,7 @@ int main()
                 system("CLS");
                 cout << "Время:" << int(time_end - timer.elapsedSeconds()) << endl;
                 cout << "Тема: " << them << endl;
-                cout << "Ответ: " << answer << endl; // Still test line. Delete or comment in final version
+                //cout << "Ответ: " << answer << endl; // Still test line. Delete or comment in final version
                 drawing_man(life);
                 cout << endl;
                 word_fill(answer, found);
