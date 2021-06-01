@@ -25,7 +25,6 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "rus");
-    srand(time(0));
     bool gamestatus = true;
     int lines = 0;
     int life = 6;
@@ -46,10 +45,18 @@ int main()
     vector<char> entered_letters;
 
     while (gamestatus) {
+        srand(time(0));
+        found.clear();
+        entered_letters.clear();
+        life = 6;   
+        time_end = 90;
+        time_s = 0;
         do {
             system("CLS");
             cout << "Введите никнейм (12 символов, без пробелов): ";
+            SetConsoleCP(1251);
             cin >> name;
+            SetConsoleCP(866);
         } while (name_input(name) != 0);
 
         do {
@@ -87,12 +94,12 @@ int main()
         SetConsoleCP(866);
         time_s = time_end - timer.elapsedSeconds();
         timer.stop();
+
         if (time_s > 0 && life > 0 && victory_check(answer, found) == 123) {
             record.Name = name;
             record.Score = time_s * difficulty_s;
             records(fs, patch_r, record);
         }
-
         system("CLS");
         cout << "Поздравляю!\n Ваше слово:" << answer<< "\n Вы заработали: " << time_s * difficulty_s << " очков." << endl;
 

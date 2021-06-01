@@ -1,3 +1,3 @@
-#pragma onca
+#pragma once
 
 int restartgame(bool& gamestatus);
