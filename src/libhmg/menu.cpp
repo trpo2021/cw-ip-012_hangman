@@ -46,10 +46,13 @@ int menu(string& patch, int& difficulty_s, fstream& fs, string patch_r)
                         getline(fs, str);
                         cout << k << ". " << str << endl;
                         k++;
+                        if (k > 10)
+                            break;
                     }
                     cout << "Для выбора сложности нажите Enter." << endl;
                     system("pause");
                 }
+                fs.close();
                 break;
             default:
                 patch = "difficulties/easy.txt";

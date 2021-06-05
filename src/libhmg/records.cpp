@@ -27,7 +27,7 @@ int records(fstream& fs, string patch, list& record_now)
         while (!fs.eof()) {
             k++;
             fs >> record;
-            if (record_now.Score > record.Score || k<10) {
+            if (record_now.Score > record.Score || k == 10) {
                 flag = 1;
                 fs.close();
                 break;
@@ -37,7 +37,7 @@ int records(fstream& fs, string patch, list& record_now)
             fs.open(patch, fstream::in | fstream::out | fstream::app);
             fs << endl << record_now;
             fs.close();
-            fs.open(patch, fstream::in | fstream::out | fstream::app);
+            fs.open(patch, fstream::in | fstream::out);
             while (!fs.eof()) {
                 fs >> record;
                 lines.push_back(record);
@@ -48,9 +48,8 @@ int records(fstream& fs, string patch, list& record_now)
                      return p1.Score > p2.Score;
                 });
             fs.close();
-            fs.open(patch, fstream::in | fstream::out);
-            SetConsoleCP(1251);
-            for (size_t i = 0; i < 10 && i<lines.size(); i++) {
+            fs.open(patch, fstream::out);
+            for (size_t i = 0; i < 10 && i < lines.size(); i++) {
                 fs << lines.at(i) << endl;
             }
             fs.close();

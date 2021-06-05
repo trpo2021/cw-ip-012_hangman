@@ -18,5 +18,5 @@ int victory_check(string answer, vector<char>& found)
                 return 123;
         }
     }
-    return sum_letters;
+    return 0;
 }

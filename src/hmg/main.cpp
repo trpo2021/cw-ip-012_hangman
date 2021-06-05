@@ -27,8 +27,8 @@ int main()
     setlocale(LC_ALL, "rus");
     bool gamestatus = true;
     int lines = 0;
-    int life = 6;
-    int time_end = 90;
+    int life;
+    int time_end;
     int time_s = 0;
     int difficulty_s;
     Timer timer;
@@ -51,6 +51,7 @@ int main()
         life = 6;   
         time_end = 90;
         time_s = 0;
+        lines = 0;
         do {
             system("CLS");
             cout << "Введите никнейм (12 символов, без пробелов): ";
@@ -69,14 +70,13 @@ int main()
         while (life > 0 && victory_check(answer, found) != 123) {
             do {
                 system("CLS");
-                cout << "Время:" << int(time_end - timer.elapsedSeconds()) << endl;
+                cout << "Время:" << int(time_end - timer.elapsedSeconds()) << " секунд осталось." <<endl;
                 cout << "Тема: " << them << endl;
                 //cout << "Ответ: " << answer << endl; // Still test line. Delete or comment in final version
                 drawing_man(life);
                 cout << endl;
                 word_fill(answer, found);
                 cout << endl;
-                cout << victory_check(answer, found);
                 if (time_end - timer.elapsedSeconds() <= 0)
                     life = 0;
                 cout << endl << "Введите одну букву: ";
@@ -93,14 +93,21 @@ int main()
         time_s = time_end - timer.elapsedSeconds();
         timer.stop();
 
+        system("CLS");
         if (time_s > 0 && life > 0 && victory_check(answer, found) == 123) {
+            cout << "Поздравляю!\n Ваше слово:" << answer
+                 << "\n Вы заработали: " << time_s * difficulty_s << " очков."
+                 << endl;
             record.Name = name;
             record.Score = time_s * difficulty_s;
             records(fs, patch_r, record);
+        } else if (time_s <= 0 && life >= 0) {
+            drawing_man(0);
+            cout << "Ваше время истекло, вы проиграли!\nОтвет:" << answer << ".\n";
+        } else if (time_s > 0 && life == 0){
+            drawing_man(0);
+            cout << "У вас закончились жизни, вы проиграли!\nОтвет:" << answer << ".\n";
         }
-        system("CLS");
-        cout << "Поздравляю!\n Ваше слово:" << answer<< "\n Вы заработали: " << time_s * difficulty_s << " очков." << endl;
-
         while (restartgame(gamestatus) != 0) {
             system("CLS");
         }
