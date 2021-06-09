@@ -7,17 +7,18 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <Windows.h>
+//#include <Windows.h>
 #include <algorithm>
 
 using namespace std;
 
 int records(fstream& fs, string patch, list& record_now)
 {
+    setlocale(LC_ALL, "rus");
     bool flag = 0;
     list record;
     vector<list> lines;
-    SetConsoleCP(1251);
+    //SetConsoleCP(1251);
     fs.open(patch, fstream::in | fstream::out | fstream::app);
     if (!fs.is_open()) {
         cout << "Ошибка открытия файла " << endl;
@@ -55,6 +56,6 @@ int records(fstream& fs, string patch, list& record_now)
             fs.close();
         }
     }
-    SetConsoleCP(866);
+    //SetConsoleCP(866);
     return 0;
 }

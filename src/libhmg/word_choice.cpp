@@ -8,13 +8,14 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <Windows.h>
+//#include <Windows.h>
 #include <ctime>
 
 using namespace std;
 
 void word_choice(fstream& fin, string patch, int lines, game& word)
 {
+    setlocale(LC_ALL, "rus");
     int rline = 1 + rand() % lines;
     int k = 0;
     fin.open(patch);
@@ -24,9 +25,9 @@ void word_choice(fstream& fin, string patch, int lines, game& word)
         cout << "Файл " << patch << " открыт успешно!" << endl;
         while (!fin.eof()) {
             k++;
-            SetConsoleCP(1251);
+            //SetConsoleCP(1251);
             fin >> word;
-            SetConsoleCP(866);
+            //SetConsoleCP(866);
 
             if (k == rline)
                 break;

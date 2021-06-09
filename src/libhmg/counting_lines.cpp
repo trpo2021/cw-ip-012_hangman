@@ -6,7 +6,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <Windows.h>
+//#include <Windows.h>
 
 using namespace std;
 
@@ -23,9 +23,9 @@ int counting_lines(fstream& fin, string patch, int& lines)
         cout << "Файл " << patch << " открыт успешно!" << endl;
         while (!fin.eof()) {
             lines++;
-            SetConsoleCP(1251);
+            //SetConsoleCP(1251);
             fin >> word;
-            SetConsoleCP(866);
+            //SetConsoleCP(866);
         }
     }
     fin.close();

@@ -13,7 +13,7 @@
 #include <libhmg/word_choice.h>
 #include <libhmg/word_fill.h>
 
-#include <Windows.h>
+//#include <Windows.h>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -55,9 +55,9 @@ int main()
         do {
             system("CLS");
             cout << "¬ведите никнейм (12 символов, без пробелов): ";
-            SetConsoleCP(1251);
+            //SetConsoleCP(1251);
             cin >> name;
-            SetConsoleCP(866);
+            //SetConsoleCP(866);
         } while (name_input(name) != 0);
         
         menu(patch, difficulty_s, fs, patch_r);
@@ -80,16 +80,16 @@ int main()
                 if (time_end - timer.elapsedSeconds() <= 0)
                     life = 0;
                 cout << endl << "¬ведите одну букву: ";
-                SetConsoleCP(1251);
+                //SetConsoleCP(1251);
                 if (life > 0) {
                     cin >> letter;
                 }
-                SetConsoleCP(866);
+                //SetConsoleCP(866);
             } while (input_validation(letter) != 0 && life > 0);
             if (word_check(answer, letter, found, entered_letters) == 22)
                 life--;
         }
-        SetConsoleCP(866);
+        //SetConsoleCP(866);
         time_s = time_end - timer.elapsedSeconds();
         timer.stop();
 

@@ -2,12 +2,12 @@
 
 #include <libhmg/struct_list.h>
 
-#include <iostream>
+//#include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
-#include <Windows.h>
-#include <algorithm>
+//#include <vector>
+//#include <Windows.h>
+//#include <algorithm>
 
 using namespace std;
 
