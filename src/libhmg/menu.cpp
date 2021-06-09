@@ -37,7 +37,7 @@ int menu(string& patch, int& difficulty_s, fstream& fs, string patch_r)
                 system("CLS");
                 fs.open(patch_r, fstream::in | fstream::out);
                 if (!fs.is_open()) {
-                    return 1;
+                    return 4;
                 } else {
                     string str;
                     int k = 1;
@@ -57,10 +57,10 @@ int menu(string& patch, int& difficulty_s, fstream& fs, string patch_r)
             default:
                 patch = "difficulties/easy.txt";
                 difficulty_s = 5;
-                return 11;
+                return 0;
                 break;
             }
         }
     }
-    return 1;
+    return 11;
 }

@@ -15,8 +15,8 @@ int victory_check(string answer, vector<char>& found)
             if (answer.at(j) == found.at(i))
                 sum_letters++;
             if (sum_letters == answer.size())
-                return 123;
+                return 0;
         }
     }
-    return 0;
+    return 1;
 }

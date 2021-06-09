@@ -48,7 +48,7 @@ int main()
         srand(time(0));
         found.clear();
         entered_letters.clear();
-        life = 6;   
+        life = 6;
         time_end = 90;
         time_s = 0;
         lines = 0;
@@ -67,7 +67,7 @@ int main()
         them = word.Question;
         answer = word.Word;
         timer.start();
-        while (life > 0 && victory_check(answer, found) != 123) {
+        while (life > 0 && victory_check(answer, found) != 0) {
             do {
                 system("CLS");
                 cout << "Время:" << int(time_end - timer.elapsedSeconds()) << " секунд осталось." <<endl;
@@ -94,7 +94,7 @@ int main()
         timer.stop();
 
         system("CLS");
-        if (time_s > 0 && life > 0 && victory_check(answer, found) == 123) {
+        if (time_s > 0 && life > 0 && victory_check(answer, found) == 0) {
             cout << "Поздравляю!\n Ваше слово:" << answer
                  << "\n Вы заработали: " << time_s * difficulty_s << " очков."
                  << endl;

@@ -10,13 +10,14 @@
 
 using namespace std;
 
-void counting_lines(fstream& fin, string patch, int& lines)
+int counting_lines(fstream& fin, string patch, int& lines)
 {
     game word;
     fin.open(patch);
 
     if (!fin.is_open()) {
         cout << "Ошибка в открытии файла " << patch << endl;
+        return 1;
     } else {
         //Получение количества строк
         cout << "Файл " << patch << " открыт успешно!" << endl;
@@ -28,4 +29,5 @@ void counting_lines(fstream& fin, string patch, int& lines)
         }
     }
     fin.close();
+    return 0;
 }

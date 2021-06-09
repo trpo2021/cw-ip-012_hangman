@@ -3,7 +3,7 @@
 
 int name_input(std::string name)
 {
-    if (name.size() < 12) {
+    if (name.size() <= 12) {
         if (name.find(' ') == std::string::npos)
             return 0;
     }
