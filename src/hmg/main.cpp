@@ -24,6 +24,7 @@ using namespace std;
 
 int main()
 {
+    system("chcp 1251");
     setlocale(LC_ALL, "rus");
     bool gamestatus = true;
     int lines = 0;
@@ -95,8 +96,8 @@ int main()
 
         system("CLS");
         if (time_s > 0 && life > 0 && victory_check(answer, found) == 0) {
-            cout << "Поздравляю!\n Ваше слово:" << answer
-                 << "\n Вы заработали: " << time_s * difficulty_s << " очков."
+            cout << "Поздравляю!\nВаше слово:" << answer
+                 << "\nВы заработали: " << time_s * difficulty_s << " очков."
                  << endl;
             record.Name = name;
             record.Score = time_s * difficulty_s;

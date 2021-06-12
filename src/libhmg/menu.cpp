@@ -12,7 +12,7 @@ int menu(string& patch, int& difficulty_s, fstream& fs, string patch_r)
     char choice;
     while (choice != '1' || choice != '2' || choice != '3') {
         system("CLS");
-        cout << "Выберите уровень сложности: "
+        cout << "Выберите уровень сложности для начала игры или выберите 4 для\nпросмотра таблицы рекордов: "
                 "\n1.Легкая\n2.Средняя\n3.Высокая\n4.Таблица рекрдов (10 "
                 "первых мест)\n";
         cin >> choice;
