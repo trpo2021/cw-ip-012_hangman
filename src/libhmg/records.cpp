@@ -21,7 +21,6 @@ int records(fstream& fs, string patch, list& record_now)
     //SetConsoleCP(1251);
     fs.open(patch, fstream::in | fstream::out | fstream::app);
     if (!fs.is_open()) {
-        cout << "Ошибка открытия файла " << endl;
         return 1;
     } else {
         int k = 0;

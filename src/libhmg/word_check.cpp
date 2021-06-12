@@ -22,7 +22,7 @@ int word_check(
     if (flag == 0) {
         entered_letters.push_back(letter);
     } else
-        return 0;
+        return 11;
     for (size_t i = 0; i < answer.size(); i++) {
         if (letter == answer.at(i)) {
             found.push_back(letter);
