@@ -2,6 +2,8 @@
 *.d
 *.o
 bin/test
+bin/hmg
+test/highscore.txt
 obj/src/*.o
 obj/src/*.a
 obj/src/*.d
